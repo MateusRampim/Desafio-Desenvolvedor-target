@@ -1,5 +1,5 @@
 # Desafio-Desenvolvedor-target
-1. **Resposta**: 77  [** implmentação no arquivo **](https://github.com/MateusRampim/Desafio-Desenvolvedor-target/blob/main/implementacoes.py)
+1. **Resposta**: 77    [**implmentação no arquivo**](https://github.com/MateusRampim/Desafio-Desenvolvedor-target/blob/main/implementacoes.py)
 
 2. **Explicações**:
 
@@ -20,29 +20,62 @@
   
   [**SQL no arquivo**](https://github.com/MateusRampim/Desafio-Desenvolvedor-target/blob/main/Sql%20busca.sql).
 
-5. [** implmentação no arquivo **](https://github.com/MateusRampim/Desafio-Desenvolvedor-target/blob/main/implementacoes.py)
+4. [**implmentação no arquivo**](https://github.com/MateusRampim/Desafio-Desenvolvedor-target/blob/main/implementacoes.py)
 
-6. **Para calcular a velocidade média do carro**:
 
-   Devemos considerar o percurso total a 90 km/h + 15 minutos parados.
 
-   Tempo total = \(\frac{125}{90} = 1,389\) horas + 0,25 horas = 1,639 horas.
 
-   Então, a velocidade média é \(\frac{125}{1,639} \approx 76,27\) km/h.
+5. **Para calcular a velocidade média do carro**:
 
+   Devemos considerar o percurso total a 90 km/h e 15 minutos parados.
+
+   O tempo total é calculado como:
+
+   ```plaintext
+   Tempo total = (Distância / Velocidade) + Tempo de parada
+                = (125 km / 90 km/h) + (15 minutos / 60 minutos/hora)
+                = 1,3889 horas + 0,25 horas
+                = 1,6389 horas
+   ```
+   
+   Então, a velocidade média é calculada como:
+   ```plaintext
+   Velocidade média = Distância / Tempo total
+                 = 125 km / 1,6389 horas
+                 ≈ 76,27 km/h
+   ```
    O carro se afasta de Ribeirão Preto a essa velocidade, e o caminhão vem em direção a Ribeirão Preto a 80 km/h.
 
-   **Cálculo das distâncias**:
+   Cálculo das distâncias:
 
-   - Carro: \( \text{distância} = 76,24 \times T \)
-   - Caminhão: \( \text{distância} = 125 - 80T \)
+   Distância percorrida pelo carro:
+   ```plaintext
+   Distância = Velocidade média * Tempo
+          = 76,27 km/h * T
+   ````
+   Distância percorrida pelo caminhão:
+   ```plaintext
+   Distância = Distância total - (Velocidade caminhão * Tempo)
+          = 125 km - 80 km/h * T
+   ````
+   Igualando as duas distâncias:
+   ```plaintext
+   76,27 * T = 125 - 80 * T
+   156,27 * T = 125
+   T ≈ 0,80 horas
+   ````
+   O carro está a:
+   ```plaintext
+   Distância do caminhão = Distância total - (Velocidade caminhão * Tempo)
+                       = 125 km - 80 km/h * 0,80 horas
+                       ≈ 61 km
+   ````
+   O caminhão está a:
+   ```plaintext
+   Distância do caminhão = Distância total - (Velocidade caminhão * Tempo)
+                       = 125 km - 80 km/h * 0,80 horas
+                       ≈ 61 km
+   ````
+   **Na margem de erro, os dois veículos estão à mesma distância de Ribeirão Preto.**
 
-   Igualando as duas:
-
-   \[
-   T = \frac{125}{76,24 + 80} = 0,80 \text{ horas}
-   \]
-
-   O carro está a \(76,24 \times 0,80 = 60,996\) km e o caminhão a \(125 - 80 \times 0,80 = 61\) km de Ribeirão Preto.
-
-   Na margem de erro, os dois veículos estão à mesma distância de Ribeirão Preto.
+   
